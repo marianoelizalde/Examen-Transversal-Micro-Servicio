@@ -1,0 +1,78 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: usuario-ms
+          uri: lb://usuarioMS
+          predicates:
+            - Path=/api/v1/usuarios/**
+        - id: cliente-ms
+          uri: lb://usuarioMS
+          predicates:
+            - Path=/api/v1/clientes/**
+        - id: empleado-ms
+          uri: lb://usuarioMS
+          predicates:
+            - Path=/api/v1/empleados/**
+        - id: antecedentes-ms
+          uri: lb://usuarioMS
+          predicates:
+            - Path=/api/v1/antecedentes/**
+        - id: vehiculo-ms
+          uri: lb://vehiculoMS
+          predicates:
+            - Path=/api/v1/vehiculos/**
+        - id: mantencion-ms
+          uri: lb://vehiculoMS
+          predicates:
+            - Path=/api/v1/mantenciones/**
+        - id: sucursal-ms
+          uri: lb://sucursalMS
+          predicates:
+            - Path=/api/v1/sucursales/**
+        - id: reservas-ms
+          uri: lb://reservasMS
+          predicates:
+            - Path=/api/v1/reservas/**
+        - id: pagos-ms
+          uri: lb://pagosMS
+          predicates:
+            - Path=/api/v1/pagos/**
+        - id: documentos-ms
+          uri: lb://documentosMS
+          predicates:
+            - Path=/api/v1/contratos/**
+        - id: participantes-ms
+          uri: lb://documentosMS
+          predicates:
+            - Path=/api/v1/participantes/**
+        - id: notificaciones-ms
+          uri: lb://notificacionesMS
+          predicates:
+            - Path=/api/v1/notificaciones/**
+        - id: soporte-ms
+          uri: lb://soporteMS
+          predicates:
+            - Path=/api/v1/tickets/**
+        - id: tarifas-ms
+          uri: lb://tarifasMS
+          predicates:
+            - Path=/api/v1/tarifas/**
+        - id: fidelizacion-ms
+          uri: lb://fidelizacionMS
+          predicates:
+            - Path=/api/v1/fidelizacion/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
