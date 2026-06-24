@@ -1,4 +1,9 @@
 ---------------------- ArriendoVehicular
+--------Documentacion Trello:
+                            https://trello.com/invite/b/6a3b479dd793641832762bc4/ATTI201450d6e701b93f7ace0ca72ce84bf3E6362A39/ms-arriendo-automotriz
+
+
+
 
 Sistema de Gestión de Arriendo de Vehículos.
 
